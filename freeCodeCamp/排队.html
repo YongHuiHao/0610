@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        //功能：传入一个数组，和一个元素，将元素添加到数组末尾，并删除首位
+        function nextInLine(arr, item) {
+            //要判断数组是否为空，数组为空则直接返回第二个参数
+            if (arr.length != 0) {
+                let arrLast = arr[0];
+                //for循环遍历数组，将数组的每一位向前复制一位
+                for (let i = 1; i < arr.length; i++) {
+                    arr[i - 1] = arr[i];
+                }
+                //将第二个参数，放入数组末尾 
+                arr[arr.length - 1] = item;
+                return arrLast; // 请修改这一行
+            } else {
+                return item;
+            }
+        }
+
+        // 初始化测试数据
+        var testArr = [5, 6, 7, 8, 9];
+        console.log(nextInLine(testArr, 1));
+        console.log(testArr);
+    </script>
+</body>
+
+</html>

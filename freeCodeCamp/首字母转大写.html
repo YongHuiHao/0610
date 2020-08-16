@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        //每个单词首字母转大写，其余字母转小写
+        function titleCase(str) {
+            //先把所有字符转小写,然后将字符串用空格分割成数组
+            let strArr = str.toLowerCase().split(" ");
+            //利用replace方法，替换第一个首字母
+            strArr = strArr.map(item => {
+                //将第一个字符替换成大写字符
+                return item.replace(/\w/, item[0].toUpperCase());
+            });
+            //再将字符数组拼接起来
+            str = strArr.join(" ");
+            return str;
+        }
+        console.log(titleCase("I'm a little tea pot"));;
+    </script>
+</body>
+
+</html>

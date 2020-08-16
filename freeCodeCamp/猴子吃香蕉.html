@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        //请写一个函数，将一个数组（第一个参数）分割成一组长度为 size（第二个参数）的数组，然后在一个二维数组中返回这些结果
+        function chunkArrayInGroups(arr, size) {
+            const newArr = [];
+            //先判断数组能分割几份
+            // let part = parseInt(arr.length / size);
+            //然后再进行分割
+            for (let i = 0; i < arr.length;) {
+                newArr.push(arr.splice(i, size));
+            }
+            /* if (arr.length) {
+                newArr.push(arr);
+            } */
+            console.log(newArr);
+            return newArr;
+        }
+
+        function chunkArrayInGroups(arr, size) {
+            const newArr = [];
+            for (let i = 0; i < arr.length;) {
+                newArr.push(arr.splice(i, size));
+            }
+            return newArr;
+        }
+        chunkArrayInGroups([0, 1, 2, 3, 4, 5, 6], 3);
+    </script>
+</body>
+
+</html>

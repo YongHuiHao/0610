@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // function mutation(arr) {
+        //     //输入参数是一个有两个字符串元素的数组。如果第一个字符串中包含了第二个字符串中的所有字母，则返回 true。
+        //     //先将两个参数取出来,并转成数组
+        //     let strArr1 = arr[0].toLowerCase();
+        //     let strArr2 = arr[1].toLowerCase().split("");
+        //     //设置开关，用来表示第二个字符是否全部出现在第一个字符内
+        //     let flag = true;
+        //     // [].forEach.call(strArr2, item => {
+        //     //     let reg = new RegExp(item, "g")
+        //     //     if (strArr1.search(reg) == -1) {
+        //     //         flag = false;
+        //     //     }
+        //     // });
+        //     // strArr2.forEach(item => {
+        //     //     let reg = new RegExp(item, "g")
+        //     //     if (strArr1.search(reg) == -1) {
+        //     //         flag = false;
+        //     //     }
+        //     // });
+        //     strArr2.forEach(item => {
+        //         if (strArr1.indexOf(item) == -1) {
+        //             flag = false;
+        //         }
+        //     })
+        //     return flag;
+        // }
+
+        function mutation(arr) {
+            //先将两个参数取出来,并转成数组
+            let strArr1 = arr[0].toLowerCase();
+            let strArr2 = arr[1].toLowerCase().split("");
+            //设置开关，用来表示第二个字符是否全部出现在第一个字符内
+            let flag = true;
+            flag = strArr2.every(item => {
+                return strArr1.indexOf(item) != -1;
+            })
+            return flag;
+        }
+        console.log(mutation(["Mary", "Aarmy"]));
+    </script>
+</body>
+
+</html>
